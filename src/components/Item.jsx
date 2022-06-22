@@ -5,7 +5,7 @@ function Item ({titulo, imagen, descripcion, precio}){
         <>
             <div>
                 <h1>{titulo}</h1>
-                <img src={imagen} >Imagen del Juguete</img>
+                <img style={{width: 100, height: 100}} src={imagen}></img>
                 <p>{descripcion}</p>
                 <p>Precio: {precio}</p>
                 <button>Detalles del juguete</button>
