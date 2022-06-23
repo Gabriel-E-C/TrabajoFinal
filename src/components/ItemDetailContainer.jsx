@@ -1,42 +1,37 @@
 import React, { useEffect, useState } from 'react';
-import ItemList from './ItemList';
+import ItemDetail from './ItemDetail';
 
-function ItemDetailContainer (){
+function ItemDetailContainer() {
     const ubicacionDelItem = '../mockItem.json';
-    const [loading, setLoading] = useState (true);
-    const [detalleItem, setDetalleItem] = useState ({});
+    const [loading, setLoading] = useState(true);
+    const [detalleItem, setDetalleItem] = useState({});
 
-    const getItem = (url)  =>{
-        fetch (url)
-        .then ((Response) => Response.json())
-        .then ((data) => setDetalleItem(data.result))
-        .catch (error =>console.log("error"))
-    };
     
-    useEffect (() => {
-        const detalleDelItem = new Promise ((res, rej) =>{
+    useEffect(() => {
+        const getItem = (url) => {
+            return fetch(url)
+                .then((response) => response.json())
+                //.then((data) => console.log (data))
+                .catch(error => console.log("error"))
+        };
+    
 
-            setTimeout (() => {
-                res( getItem (ubicacionDelItem));
-            }, 2000);
-        });
-
-    elItem
-        .then ((resultado)=>{
-            setDetalleItem (resultado)
-        })
-        .finally(() => {
-            setLoading (false);
-        })
-    },[]);
+        getItem (ubicacionDelItem)
+            .then((resultado) => {
+                console.log(resultado)
+                setDetalleItem(resultado)
+            })
+            .finally(() => {
+                setLoading(false);
+            })
+    }, []);
 
     return (
-    <>
-        <div>{loading && 'Loading...'}</div>
-        
-        <ItemDetail detalleItem = {detalleItem} />
-    </>
-    )       
+        <>
+            <div>{loading && 'Loading...'}</div>
+            <div>{!loading && <ItemDetail detalleItem={detalleItem} />}</div>
+        </>
+    )
 };
 
 export default ItemDetailContainer;
