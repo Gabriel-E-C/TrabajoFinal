@@ -1,44 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
+import { useParams } from 'react-router-dom'
 
 function ItemListContainer (){
+    const { categoria } = useParams ();
+    const ubicacionListaItems = '../mockItems.json'
     const [loading, setLoading] = useState (true);
     const [listaItems, setListaItems] = useState ([]);
 
     useEffect (() => {
+
+        const getItemsList = (url) => {
+            return fetch(url)
+                .then((response) => response.json())
+                .then((data) => data)
+                .catch(error => console.log("error"))
+        };
+
         const losItems = new Promise ((res, rej) =>{
             setTimeout (() => {
-                res ([{
-                        titulo: 'Boba Fett Action Figure',
-                        imagen: '../bobaFett.png',
-                        descripcion: 'Figura de accion vintage de Boba Fett, mercenario de Star Wars',
-                        precio: '$5000'
-                    },
-                    {
-                        titulo: 'Destro G.I. Joe Action Figure',
-                        imagen: '../bobaFett.png',
-                        descripcion: 'Figura de accion vintage de Destro, comandante de fuerzas del mal de G.I. Joe',
-                        precio: '$4000'
-                    },
-                    {
-                        titulo: 'Cobra G.I. Joe Action Figure',
-                        imagen: '../bobaFett.png',
-                        descripcion: 'Figura de accion vintage de Destro, general de fuerzas del mal de G.I. Joe',
-                        precio: '$5500'
-                    },
-                    {
-                        titulo: 'Snake Bite Action Figure',
-                        imagen: '../bobaFett.png',
-                        descripcion: 'Figura de accion vintage de Snake Bite, mercenario de las fuerzas del mal de Rambo',
-                        precio: '$7800'
-                    },
-                ]);
+                res ( getItemsList (ubicacionListaItems)
+                );
             }, 2000);
         });
     
         losItems
             .then ((resultado) => {
-                setListaItems (resultado);
+                setListaItems (categoria ? resultado.filter(lista => lista.category == categoria) : resultado);
             })
             .finally(() => {
                 setLoading (false);

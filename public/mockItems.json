@@ -1,0 +1,50 @@
+[
+    {
+        "id": 0,
+        "category": "actionFigure",
+        "titulo": "Boba Fett Action Figure",
+        "imagen": "../bobaFett.png",
+        "descripcion": "Figura de accion vintage de Boba Fett, mercenario de Star Wars",
+        "precio": "$5000"
+    },
+    {
+        "id": 1,
+        "category": "actionFigure",
+        "titulo": "Destro G.I. Joe Action Figure",
+        "imagen": "../destro.png",
+        "descripcion": "Figura de accion vintage de Destro, comandante de fuerzas del mal de G.I. Joe",
+        "precio": "$4000"
+    },
+    {
+        "id": 2,
+        "category": "actionFigure",
+        "titulo": "Cobra G.I. Joe Action Figure",
+        "imagen": "../cobra.png",
+        "descripcion": "Figura de accion vintage de Cobra, general de fuerzas del mal de G.I. Joe",
+        "precio": "$5500"
+    },
+    {
+        "id": 3,
+        "category": "actionFigure",
+        "titulo": "Snake Eyes G.I. Joe Action Figure",
+        "imagen": "../snakeEyes.png",
+        "descripcion": "Figura de accion de Snake Eyes, ninja de las fuerzas especiales G.I. Joe",
+        "precio": "$5500"
+    },
+    {
+        "id": 4,
+        "category": "actionFigure",
+        "titulo": "Snake Bite Action Figure",
+        "imagen": "../snakeBite.png",
+        "descripcion": "Figura de accion vintage de Snake Bite, mercenario de las fuerzas del mal de Rambo",
+        "precio": "$7800"
+    },
+    {
+        "id": 5,
+        "category": "colectionFigure",
+        "titulo": "Snake Bite Action Figure",
+        "imagen": "../snakeBite.png",
+        "descripcion": "Figura de accion vintage de Snake Bite, mercenario de las fuerzas del mal de Rambo",
+        "precio": "$7800"
+    }
+]

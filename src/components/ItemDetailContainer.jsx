@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
+import { useParams } from 'react-router-dom'
 
 function ItemDetailContainer() {
-    const ubicacionDelItem = '../mockItem.json';
+    const { id } = useParams ();
+    const ubicacionDelItem = '../mockItems.json';
     const [loading, setLoading] = useState(true);
     const [detalleItem, setDetalleItem] = useState({});
 
@@ -18,8 +20,8 @@ function ItemDetailContainer() {
 
         getItem (ubicacionDelItem)
             .then((resultado) => {
-                console.log(resultado)
-                setDetalleItem(resultado)
+                console.log(resultado.find (item => item.id == id))
+                setDetalleItem(resultado.find(item  => item.id == id))
             })
             .finally(() => {
                 setLoading(false);

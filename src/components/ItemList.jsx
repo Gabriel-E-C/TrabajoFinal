@@ -4,15 +4,17 @@ import Item from './Item';
 function ItemList ({result}){
     return (
         <>
-            {result.map ((item) => (
-            <>
-                <div className='flex-container'>
-                    <div className='row'>
-                        <Item titulo = {item.titulo} imagen = {item.imagen} descripcion = {item.descripcion} precio = {item.precio} />
+            <div className='flex-container'>
+                <div className='row'>
+                    <div className='d-flex flex-wrap bg-success ' style={{border:'solid 3px black'}}>
+                        {result.map ((item) => (
+                        <>
+                            <Item id = {item.id} titulo = {item.titulo} imagen = {item.imagen} descripcion = {item.descripcion} precio = {item.precio} />
+                        </>
+                        ))}
                     </div>
                 </div>
-            </>
-            ))}
+            </div>
         </>
     );
 };
