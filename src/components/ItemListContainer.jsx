@@ -25,6 +25,7 @@ function ItemListContainer (){
         });
     
         losItems
+            //ver que pasa aca que no filtra por categoria y entregar
             .then ((resultado) => {
                 setListaItems (categoria ? resultado.filter(lista => lista.category == categoria) : resultado);
             })
