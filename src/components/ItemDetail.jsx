@@ -4,7 +4,6 @@ import Item from './Item';
 
 function ItemDetail ({detalleItem}){
     const {titulo, imagen, descripcion, precio} = detalleItem
-    //{elItem.map ((item) => (<Item titulo = {item.titulo} imagen={item.imagen} descripcion={item.descripcion} precio={item.precio} />))}
     console.log(titulo)
 
     return (

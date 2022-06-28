@@ -13,8 +13,10 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
+import  Logo  from '../imagenes/logo-toys-r-u.png'
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Accion', 'Coleccionables', 'Funko'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const NavBar = () => {
@@ -40,7 +42,7 @@ const NavBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          
           <Typography
             variant="h6"
             noWrap
@@ -56,7 +58,7 @@ const NavBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            <Link to = { '/' }> <img src={Logo} alt="Imagen del Logo" style ={{maxWidth: "70px"}}/> </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -90,12 +92,12 @@ const NavBar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center"><Link to ={'Category/' + page} style ={{textDecoration: 'none'}}>{page}</Link></Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          
           <Typography
             variant="h5"
             noWrap
@@ -112,17 +114,19 @@ const NavBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            <Link to = { '/' }> <img src={Logo} alt="Imagen del Logo" style ={{maxWidth: "70px"}}/> </Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
+              <Link to ={'Category/' + page} style ={{textDecoration: 'none'}}>
+                <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
               </Button>
+            </Link>
             ))}
           </Box>
 

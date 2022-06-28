@@ -9,7 +9,7 @@ function ItemList ({result}){
                     <div className='d-flex flex-wrap bg-success ' style={{border:'solid 3px black'}}>
                         {result.map ((item) => (
                         <>
-                            <Item id = {item.id} titulo = {item.titulo} imagen = {item.imagen} descripcion = {item.descripcion} precio = {item.precio} />
+                            <Item id = {item.id} category = {item.category} titulo = {item.titulo} imagen = {item.imagen} descripcion = {item.descripcion} precio = {item.precio} />
                         </>
                         ))}
                     </div>

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 
-function ItemListContainer (){
-    const { categoria } = useParams ();
+function ItemListContainer() {
+    const { category } = useParams();
     const ubicacionListaItems = '../mockItems.json'
-    const [loading, setLoading] = useState (true);
-    const [listaItems, setListaItems] = useState ([]);
+    const [loading, setLoading] = useState(true);
+    const [listaItems, setListaItems] = useState([]);
 
-    useEffect (() => {
+    useEffect(() => {
 
         const getItemsList = (url) => {
             return fetch(url)
@@ -17,31 +17,28 @@ function ItemListContainer (){
                 .catch(error => console.log("error"))
         };
 
-        const losItems = new Promise ((res, rej) =>{
-            setTimeout (() => {
-                res ( getItemsList (ubicacionListaItems)
+        const losItems = new Promise((res, rej) => {
+            setTimeout(() => {
+                res(getItemsList(ubicacionListaItems)
                 );
             }, 2000);
         });
-    
+
         losItems
-            //ver que pasa aca que no filtra por categoria y entregar
-            .then ((resultado) => {
-                setListaItems (categoria ? resultado.filter(lista => lista.category == categoria) : resultado);
+            .then((resultado) => {
+                setListaItems(category ? resultado.filter(lista => lista.category == category) : resultado);
             })
             .finally(() => {
-                setLoading (false);
+                setLoading(false);
             })
-    }, []);
-
+    }, [category]);
 
     return (
-    <>
-        <div>{loading && 'Loading...'}</div>
-        {console.log({listaItems})}
-        <ItemList result = {listaItems} />
-    </>
-    )       
+        <>
+            <div>{loading && 'Loading...'}</div>
+            <ItemList result={listaItems} />
+        </>
+    )
 };
 
 export default ItemListContainer;

@@ -1,7 +1,7 @@
 [
     {
         "id": 0,
-        "category": "actionFigure",
+        "category": "Accion",
         "titulo": "Boba Fett Action Figure",
         "imagen": "../bobaFett.png",
         "descripcion": "Figura de accion vintage de Boba Fett, mercenario de Star Wars",
@@ -9,7 +9,7 @@
     },
     {
         "id": 1,
-        "category": "actionFigure",
+        "category": "Accion",
         "titulo": "Destro G.I. Joe Action Figure",
         "imagen": "../destro.png",
         "descripcion": "Figura de accion vintage de Destro, comandante de fuerzas del mal de G.I. Joe",
@@ -17,7 +17,7 @@
     },
     {
         "id": 2,
-        "category": "actionFigure",
+        "category": "Accion",
         "titulo": "Cobra G.I. Joe Action Figure",
         "imagen": "../cobra.png",
         "descripcion": "Figura de accion vintage de Cobra, general de fuerzas del mal de G.I. Joe",
@@ -25,7 +25,7 @@
     },
     {
         "id": 3,
-        "category": "actionFigure",
+        "category": "Accion",
         "titulo": "Snake Eyes G.I. Joe Action Figure",
         "imagen": "../snakeEyes.png",
         "descripcion": "Figura de accion de Snake Eyes, ninja de las fuerzas especiales G.I. Joe",
@@ -33,7 +33,7 @@
     },
     {
         "id": 4,
-        "category": "actionFigure",
+        "category": "Accion",
         "titulo": "Snake Bite Action Figure",
         "imagen": "../snakeBite.png",
         "descripcion": "Figura de accion vintage de Snake Bite, mercenario de las fuerzas del mal de Rambo",
@@ -41,10 +41,42 @@
     },
     {
         "id": 5,
-        "category": "colectionFigure",
-        "titulo": "Snake Bite Action Figure",
-        "imagen": "../snakeBite.png",
-        "descripcion": "Figura de accion vintage de Snake Bite, mercenario de las fuerzas del mal de Rambo",
-        "precio": "$7800"
+        "category": "Funko",
+        "titulo": "Alien Action Funko Pop",
+        "imagen": "../alienFunkoPop.png",
+        "descripcion": "Figura Funko Pop de accion de Alien El Octavo Pasajero",
+        "precio": "$3900"
+    },
+    {
+        "id": 6,
+        "category": "Funko",
+        "titulo": "Marty Mc Fly Funko Pop",
+        "imagen": "../martyMcFlyFunkoPop.png",
+        "descripcion": "Figura Funko Pop de Marty Mc Fly de la trilogia de Volver al Futuro",
+        "precio": "$3900"
+    },
+    {
+        "id": 7,
+        "category": "Coleccionables",
+        "titulo": "Shaka Tsume Collection Figure",
+        "imagen": "../shakaTsume.png",
+        "descripcion": "Figura Tsume de coleccion de Saint Seiya, Shaka de Virgo",
+        "precio": "$8900"
+    },
+    {
+        "id": 8,
+        "category": "Coleccionables",
+        "titulo": "Shiryu Tsume Collection Figure",
+        "imagen": "../shiryuTsume.png",
+        "descripcion": "Figura Tsume de coleccion de Saint Seiya, Dragon Shiryu",
+        "precio": "$9900"
+    },
+    {
+        "id": 9,
+        "category": "Coleccionables",
+        "titulo": "Krillin Tsume Collection Figure",
+        "imagen": "../krilinTsume.png",
+        "descripcion": "Figura Tsume de coleccion de Dragon Ball Z, Krillin contra los Saibaiman",
+        "precio": "$11000"
     }
 ]
