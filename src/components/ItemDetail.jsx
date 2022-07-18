@@ -1,15 +1,23 @@
 import { maxWidth } from '@mui/system';
 import React, { useEffect } from 'react'
+import { useState } from 'react';
 import Item from './Item';
+import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
 
 function ItemDetail ({detalleItem}){
     const {titulo, imagen, descripcion, precio} = detalleItem
-    console.log(titulo)
+    const [agrego, setAgrego] = useState (0)
+
+    function onAdd (itemCountVar){
+            setAgrego (itemCountVar)
+            console.log (itemCountVar)
+    }
 
     return (
         <>
             
-            <div className="flex-container bg-success">
+            <div className="flex-container p-3 bg-success">
                 <div className="row d-flex justify-content-center">
                     <div className="col-6 bg-warning ">
                         <div className="row">
@@ -25,6 +33,7 @@ function ItemDetail ({detalleItem}){
                         </div>
                     </div>
                 </div>
+                {(agrego != 0)? <div className="d-flex align-items-center justify-content-center m-4"> <Link to={'/Cart'}><button> Terminar mi compra </button></Link></div> : <ItemCount stock={0} inicial={5} onAdd={onAdd}/>}
             </div>            
         </>
     );
